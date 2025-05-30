@@ -1,0 +1,166 @@
+.home-container {
+    background-image: url('/Home.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+  }
+  
+  /* Gradient glow bubbles */
+  .home-container::before,
+  .home-container::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #0f0c29, #302b63, #24243e);
+    animation: float 8s ease-in-out infinite;
+    opacity: 0.3;
+    z-index: 0;
+  }
+  
+  .home-container::before {
+    top: 10%;
+    left: 5%;
+  }
+  .home-container::after {
+    bottom: 10%;
+    right: 5%;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(-20px) scale(1.1);
+    }
+  }
+  
+  /* Overlay */
+  .overlay {
+    background-color: rgba(0, 0, 51, 0.85);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    position: relative;
+  }
+  
+  /* Content Box */
+  .home-content {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: white;
+    animation: fadeInUp 1s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 600px;
+    margin: 0 1rem;
+  }
+  
+  .home-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    color: #ffffff;
+  }
+  
+  .home-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #e0e8ff;
+  }
+  
+  /* Button */
+  .home-btn {
+    padding: 0.9rem 2.2rem;
+    font-size: 1rem;
+    background-color: white;
+    color: #001f4d;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 0 transparent;
+  }
+  
+  .home-btn:hover {
+    background-color: #001f4d;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px 2px #ffffffaa;
+  }
+  
+  /* Fade animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Fireworks canvas */
+  .fireworks-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .home-content {
+      padding: 2rem;
+    }
+  
+    .home-content h1 {
+      font-size: 2rem;
+    }
+  
+    .home-content p {
+      font-size: 1rem;
+    }
+  
+    .home-btn {
+      padding: 0.7rem 1.8rem;
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .home-content {
+      padding: 1.5rem;
+    }
+  
+    .home-content h1 {
+      font-size: 1.5rem;
+    }
+  
+    .home-content p {
+      font-size: 0.95rem;
+    }
+  
+    .home-btn {
+      padding: 0.6rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  }
+  

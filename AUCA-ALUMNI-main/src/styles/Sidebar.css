@@ -1,0 +1,228 @@
+/* Sidebar Backdrop */
+.sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 20;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #1e3a8a; /* Tailwind's blue-900 */
+    color: white;
+    width: 16rem; /* 64 */
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 30;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Sidebar Open State */
+.sidebar.open {
+    transform: translateX(0);
+}
+
+/* Media Queries for Responsive Design */
+
+/* For screens 1024px and above (Desktop) */
+@media (min-width: 1024px) {
+    .sidebar {
+        width: 20rem; /* Adjust sidebar width */
+        transform: translateX(0);
+        top: 0; /* Reset any top offset */
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+  
+    .sidebar.closed {
+        transform: translateX(-100%);
+    }
+
+    /* Hide sidebar backdrop on larger screens */
+    .sidebar-backdrop {
+        display: none;
+    }
+}
+
+/* For screens between 768px and 1024px (Tablets) */
+@media (max-width: 1023px) and (min-width: 768px) {
+    .sidebar {
+        width: 18rem; /* Slightly narrower for tablet screens */
+        top: 0; /* Reset top offset */
+    }
+}
+
+/* For screens smaller than 768px (Mobile) */
+@media (max-width: 767px) {
+    .sidebar {
+        width: 16rem; /* Default sidebar width for mobile */
+        top: 2.5rem; /* <--- Add space from top (adjust as needed) */
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    /* Sidebar Backdrop Visible */
+    .sidebar-backdrop {
+        display: block;
+    }
+
+    .sidebar-header,
+    .sidebar-user,
+    .sidebar-nav,
+    .sidebar-footer {
+        padding: 0.75rem;
+    }
+
+    .sidebar-link {
+        font-size: 0.875rem;
+        padding: 0.75rem;
+    }
+
+    .support-link {
+        font-size: 0.875rem;
+        padding: 0.75rem;
+    }
+  
+    .sidebar-user {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .sidebar-user .user-name {
+        font-size: 1rem;
+    }
+
+    .sidebar-user .user-class {
+        font-size: 0.875rem;
+    }
+
+    /* Reduce padding and margins for smaller screens */
+    .sidebar-nav {
+        margin-top: 0.5rem;
+    }
+
+    .close-btn {
+        padding: 0.25rem;
+    }
+
+    .sidebar-link.active {
+        border-left: none; /* Remove left border for small screens */
+    }
+
+    .sidebar-footer {
+        position: static;
+        padding: 0.5rem;
+        border-top: 0;
+    }
+}
+
+/* General Styling */
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #1e40af; /* Tailwind's blue-800 */
+}
+
+.sidebar-title {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.close-btn {
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    background-color: #1e40af;
+}
+
+.sidebar-user {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    border-bottom: 1px solid #1e40af;
+}
+
+.user-avatar {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 9999px;
+    background-color: #1d4ed8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-name {
+    font-weight: 500;
+}
+
+.user-class {
+    font-size: 0.75rem;
+    color: #93c5fd;
+}
+
+.sidebar-nav {
+    margin-top: 1rem;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.2s;
+}
+
+.sidebar-link:hover {
+    background-color: #1e40af;
+}
+
+.sidebar-link.active {
+    background-color: #1e40af;
+    border-left: 4px solid white;
+}
+
+.icon {
+    margin-right: 0.75rem;
+}
+
+.sidebar-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+    border-top: 1px solid #1e40af;
+}
+
+.support-link {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    text-decoration: none;
+    color: white;
+    border-radius: 0.375rem;
+    transition: background-color 0.2s;
+}
+
+.support-link:hover {
+    background-color: #1e40af;
+}

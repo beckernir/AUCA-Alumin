@@ -1,0 +1,172 @@
+/* Event.css */
+
+/* Container for the entire Event page */
+.event-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: #002f6c;  /* Dark Blue */
+  }
+  
+  /* Title and Subtitle */
+  .event-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .event-subtitle {
+    font-size: 1.2rem;
+    color: #4a4a4a;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  /* Event List Styling */
+  .event-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .event-card {
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .event-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Image Styling */
+  .event-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 4px solid #002f6c;
+  }
+  
+  /* Event Details Styling */
+  .event-details {
+    padding: 20px;
+    background-color: #ffffff;
+  }
+  
+  .event-card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #002f6c;
+  }
+  
+  .event-card-date {
+    font-size: 1rem;
+    color: #0065b0;
+    margin: 8px 0;
+  }
+  
+  .event-card-location {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 12px;
+  }
+  
+  .event-card-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  /* Learn More Link */
+  .event-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #002f6c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .event-link:hover {
+    background-color: #004a7c;
+  }
+  
+  /* ---------- Responsive Design ---------- */
+  @media screen and (max-width: 1024px) {
+    .event-list {
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+  
+    .event-title {
+      font-size: 2.2rem;
+    }
+  
+    .event-card-title {
+      font-size: 1.4rem;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .event-container {
+      padding: 30px 15px;
+    }
+  
+    .event-list {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+  
+    .event-title {
+      font-size: 2rem;
+    }
+  
+    .event-subtitle {
+      font-size: 1rem;
+    }
+  
+    .event-card-title {
+      font-size: 1.3rem;
+    }
+  
+    .event-card-description {
+      font-size: 0.95rem;
+    }
+  
+    .event-image {
+      height: 180px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .event-title {
+      font-size: 1.8rem;
+    }
+  
+    .event-subtitle {
+      font-size: 0.95rem;
+    }
+  
+    .event-card-title {
+      font-size: 1.2rem;
+    }
+  
+    .event-card-date,
+    .event-card-location,
+    .event-card-description {
+      font-size: 0.9rem;
+    }
+  
+    .event-link {
+      padding: 8px 16px;
+      font-size: 0.95rem;
+    }
+  }
+  

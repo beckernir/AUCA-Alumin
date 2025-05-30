@@ -1,0 +1,115 @@
+/* Footer.css */
+.footer {
+    background-color: #002f6c; /* Dark Blue */
+    color: white;
+    padding: 40px 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  
+  .footer-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  
+  .footer-description {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .footer-icons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .footer-icon-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-icon-link:hover {
+    color: #1e90ff; /* Light blue for hover */
+  }
+  
+  .footer-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    display: block;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-link:hover {
+    color: #1e90ff; /* Light blue for hover */
+  }
+  
+  .footer-contact {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .footer-contact-email {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .footer-mail-icon {
+    color: white;
+  }
+  
+  .footer-email-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .footer-email-link:hover {
+    color: #1e90ff;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1rem;
+    opacity: 0.7;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+  }
+  
+  /* Responsive for smaller screens */
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .footer-icons {
+      justify-content: center;
+      margin-top: 20px;
+    }
+  }
+  

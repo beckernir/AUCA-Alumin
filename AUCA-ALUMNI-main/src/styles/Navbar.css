@@ -1,0 +1,238 @@
+:root {
+    --darkblue: #002147;
+    --white: #ffffff;
+    --lightgray: #f0f0f0;
+    --hover-gray: #e6e6e6;
+    --text-dark: #333;
+  }
+  
+  /* Navbar styles */
+  .navbar {
+    background-color: var(--darkblue);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  /* Left section */
+  .navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .menu-button {
+    background: none;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .menu-button:hover {
+    transform: scale(1.1);
+  }
+  
+  .brand {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--white);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  .brand:hover {
+    opacity: 0.8;
+  }
+  
+  .home-link {
+    color: var(--white);
+    font-weight: 800;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .home-link:hover {
+    color: var(--hover-gray);
+  }
+  
+  /* Search bar */
+  .navbar-search {
+    flex-grow: 1;
+    margin: 0 1rem;
+  }
+  
+  .search-input {
+    width: 100%;
+    max-width: 500px;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+    background-color: var(--white);
+    color: var(--darkblue);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .search-input:focus {
+    box-shadow: 0 0 0 2px rgba(0, 33, 71, 0.2);
+  }
+  
+  /* Right section */
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+  }
+  
+  .notification-button {
+    background: none;
+    border: none;
+    position: relative;
+    color: var(--white);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .notification-button:hover {
+    transform: scale(1.1);
+  }
+  
+  .notification-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background-color: red;
+    color: var(--white);
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 50%;
+  }
+  
+  .profile-button {
+    background: none;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .profile-button:hover {
+    transform: rotate(10deg);
+  }
+  
+  .profile-dropdown {
+    position: relative;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 2.5rem;
+    right: 0;
+    background-color: var(--white);
+    color: var(--text-dark);
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    min-width: 160px;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  }
+  
+  .profile-dropdown:hover .dropdown-menu,
+  .dropdown-menu:focus-within {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  .dropdown-menu a,
+  .logout-button {
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .dropdown-menu a:hover,
+  .logout-button:hover {
+    background-color: var(--lightgray);
+  }
+  
+  /* Auth buttons */
+  .login-button,
+  .register-button {
+    padding: 0.5rem 1.2rem;
+    background-color: var(--white);
+    color: var(--darkblue);
+    border: none;
+    border-radius: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .login-button:hover,
+  .register-button:hover {
+    background-color: var(--hover-gray);
+    transform: translateY(-2px);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .navbar-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .navbar-left {
+      width: 100%;
+      justify-content: space-between;
+    }
+  
+    .navbar-search {
+      width: 87%;
+      margin: 0.5rem 0;
+    }
+  
+    .navbar-right {
+      width: 100%;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  
+    .dropdown-menu {
+      right: 10px;
+    }
+    
+    .brand {
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center;
+        width: 100%;
+      }
+  }
+  

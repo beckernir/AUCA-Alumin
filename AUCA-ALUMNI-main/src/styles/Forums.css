@@ -1,0 +1,215 @@
+/* ---------- Global Font Smoothness ---------- */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- Container ---------- */
+.forum-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #0a192f;
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+/* ---------- Header ---------- */
+.forum-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.forum-header h1 {
+  color: #64ffda;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(100, 255, 218, 0.2);
+}
+
+/* ---------- Messages Container ---------- */
+.messages-container {
+  height: 500px;
+  overflow-y: auto;
+  margin-top: 15px;
+  background-color: #112240;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.35);
+  scrollbar-width: thin;
+  scrollbar-color: #64ffda #112240;
+}
+
+.messages-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+  background-color: #64ffda;
+  border-radius: 10px;
+}
+
+/* ---------- Message Structure ---------- */
+.message {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+/* ---------- Header ---------- */
+.message-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  margin-right: 12px;
+  border: 2px solid #64ffda;
+  object-fit: cover;
+}
+
+/* ---------- Sender and Role ---------- */
+.message-sender {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #ffffff;
+}
+
+.message-role {
+  font-size: 0.9rem;
+  margin-left: 8px;
+  color: #9ca3af;
+  font-style: italic;
+}
+
+/* ---------- Message Bubble ---------- */
+.message-content {
+  margin-top: 6px;
+  padding: 14px 18px;
+  background-color: #233554;
+  color: #e0f2f1;
+  border-radius: 12px;
+  max-width: 85%;
+  font-size: 0.95rem;
+  word-wrap: break-word;
+  line-height: 1.5;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+/* ---------- Timestamp ---------- */
+.message-timestamp {
+  font-size: 0.75rem;
+  color: #748cab;
+  margin-top: 6px;
+  align-self: flex-end;
+  opacity: 0.7;
+}
+
+/* ---------- Sent vs Received ---------- */
+.sent .message-content {
+  background-color: #0d7377;
+  align-self: flex-end;
+  border-bottom-right-radius: 0;
+}
+
+.received .message-content {
+  background-color: #112d4e;
+  border-bottom-left-radius: 0;
+}
+
+/* ---------- Role Colors ---------- */
+.message-role.Teacher {
+  color: #4dabf7;
+}
+
+.message-role.Student {
+  color: #00b894;
+}
+
+.message-role.Alumni {
+  color: #fbc531;
+}
+
+/* ---------- Message Input ---------- */
+.message-input {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #33415c;
+  gap: 12px;
+}
+
+.message-input input {
+  flex: 1;
+  padding: 14px 16px;
+  border: 1px solid #445;
+  border-radius: 10px;
+  background-color: #1c2541;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.message-input input:focus {
+  border-color: #64ffda;
+  box-shadow: 0 0 0 3px rgba(100, 255, 218, 0.2);
+}
+
+.message-input button {
+  padding: 14px 22px;
+  background-color: #64ffda;
+  color: #0a192f;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.message-input button:hover {
+  background-color: #52e0c4;
+  transform: scale(1.07);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .forum-container {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .forum-header h1 {
+    font-size: 2rem;
+  }
+
+  .messages-container {
+    height: 350px;
+    padding: 16px;
+  }
+
+  .message-content {
+    font-size: 0.88rem;
+  }
+
+  .message-input {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .message-input input,
+  .message-input button {
+    width: 100%;
+  }
+}
